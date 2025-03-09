@@ -43,7 +43,7 @@ export const updateStudentService = async (id, name, email, age, parent_id) => {
 }
 
 export const deleteStudentService = async (id) => {
-    const result = await pool.query("DELETE FROM student WHERE id=$1 RETURNING *",
+    const result = await pool.query("DELETE FROM students WHERE id=$1 RETURNING *",
         [id]
     )
     return result.rows[0]
